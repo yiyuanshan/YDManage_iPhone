@@ -18,7 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
+-(UIViewController *)initWithVCName:(NSString *)vcName
+{
+    return [[UIStoryboard  storyboardWithName:@"My" bundle:nil] instantiateViewControllerWithIdentifier:vcName];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

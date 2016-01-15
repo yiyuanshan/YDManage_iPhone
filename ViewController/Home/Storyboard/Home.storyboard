@@ -3,12 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--MainVC-->
         <scene sceneID="ial-Jg-1v2">
             <objects>
-                <viewController id="o1K-JC-y7H" customClass="YDMainVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YDMainVC" id="o1K-JC-y7H" customClass="YDMainVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0ta-P8-CFn"/>
                         <viewControllerLayoutGuide type="bottom" id="066-Qj-WBa"/>
@@ -19,23 +21,48 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrm-CA-Dvn">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="a0R-Gu-xcM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="103" y="190" width="280" height="21"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="a0R-Gu-xcM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="a0R-Gu-xcM"/>
+                                    </mask>
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.35686274509999999" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wrm-CA-Dvn" firstAttribute="leading" secondItem="b5V-28-qx7" secondAttribute="leadingMargin" constant="10" id="7hg-F4-lZL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wrm-CA-Dvn" secondAttribute="trailing" constant="10" id="7od-4a-HJv"/>
+                            <constraint firstItem="Wrm-CA-Dvn" firstAttribute="top" secondItem="0ta-P8-CFn" secondAttribute="bottom" constant="170" id="zrU-Cb-shP"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Wrm-CA-Dvn"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7hg-F4-lZL"/>
+                                <exclude reference="7od-4a-HJv"/>
+                                <exclude reference="zrU-Cb-shP"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="Wrm-CA-Dvn"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7hg-F4-lZL"/>
+                                <include reference="7od-4a-HJv"/>
+                                <include reference="zrU-Cb-shP"/>
                             </mask>
                         </variation>
                     </view>

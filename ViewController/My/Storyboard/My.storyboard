@@ -3,12 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--My MainVC-->
         <scene sceneID="LIB-g3-Ow8">
             <objects>
-                <viewController id="vbO-ZX-f8H" customClass="YDMyMainVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YDMyMainVC" id="vbO-ZX-f8H" customClass="YDMyMainVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZHF-o9-swX"/>
                         <viewControllerLayoutGuide type="bottom" id="eoh-QZ-6L8"/>
@@ -16,7 +17,53 @@
                     <view key="view" contentMode="scaleToFill" id="eau-ax-3ky">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SP9-5R-8Dc">
+                                <rect key="frame" x="10" y="100" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="f6I-Fb-WM7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="f6I-Fb-WM7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="f6I-Fb-WM7"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SP9-5R-8Dc" firstAttribute="leading" secondItem="eau-ax-3ky" secondAttribute="leadingMargin" id="cFX-SG-84h"/>
+                            <constraint firstItem="SP9-5R-8Dc" firstAttribute="trailing" secondItem="eau-ax-3ky" secondAttribute="trailingMargin" id="hsj-XT-IKS"/>
+                            <constraint firstItem="eoh-QZ-6L8" firstAttribute="top" secondItem="SP9-5R-8Dc" secondAttribute="bottom" id="ig1-uc-PTz"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="SP9-5R-8Dc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="cFX-SG-84h"/>
+                                <exclude reference="hsj-XT-IKS"/>
+                                <exclude reference="ig1-uc-PTz"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="SP9-5R-8Dc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="cFX-SG-84h"/>
+                                <include reference="hsj-XT-IKS"/>
+                                <include reference="ig1-uc-PTz"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUE-Ts-AEz" userLabel="First Responder" sceneMemberID="firstResponder"/>

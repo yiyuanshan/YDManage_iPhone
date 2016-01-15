@@ -9,5 +9,5 @@
 #import "YDBaseVC.h"
 
 @interface YDHomeBaseVC : YDBaseVC
-
+- (UIViewController *)initWithVCName:(NSString *)vcName;
 @end

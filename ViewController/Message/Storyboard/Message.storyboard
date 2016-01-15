@@ -3,12 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Msg MainVC-->
         <scene sceneID="Ot0-tW-FkK">
             <objects>
-                <viewController id="HHD-de-M7L" customClass="YDMsgMainVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YDMsgMainVC" id="HHD-de-M7L" customClass="YDMsgMainVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JXc-N5-TC7"/>
                         <viewControllerLayoutGuide type="bottom" id="evT-3A-zE4"/>
@@ -16,7 +18,53 @@
                     <view key="view" contentMode="scaleToFill" id="3N2-6X-7JS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kna-nH-oKM">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="dh5-iY-EDS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dh5-iY-EDS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="dh5-iY-EDS"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kna-nH-oKM" secondAttribute="trailing" constant="10" id="Ebl-cd-hAt"/>
+                            <constraint firstItem="Kna-nH-oKM" firstAttribute="leading" secondItem="3N2-6X-7JS" secondAttribute="leadingMargin" constant="10" id="V5q-4O-RzH"/>
+                            <constraint firstItem="Kna-nH-oKM" firstAttribute="top" secondItem="JXc-N5-TC7" secondAttribute="bottom" constant="253" id="foc-Tc-ogB"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Kna-nH-oKM"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Ebl-cd-hAt"/>
+                                <exclude reference="V5q-4O-RzH"/>
+                                <exclude reference="foc-Tc-ogB"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="Kna-nH-oKM"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Ebl-cd-hAt"/>
+                                <include reference="V5q-4O-RzH"/>
+                                <include reference="foc-Tc-ogB"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qT-Ya-Psv" userLabel="First Responder" sceneMemberID="firstResponder"/>
