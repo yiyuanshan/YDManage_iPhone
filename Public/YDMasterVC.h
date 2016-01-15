@@ -1,5 +1,5 @@
 //
-//  YDHomeVC.h
+//  YDMasterVC.h
 //  YDManage_iPhone
 //
 //  Created by shanyiyuan on 16/1/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YDHomeVC : UIViewController
-
+@interface YDMasterVC : UIViewController
+@property (assign, nonatomic) NSInteger selectedIndex;
 @end

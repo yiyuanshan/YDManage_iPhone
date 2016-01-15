@@ -90,7 +90,7 @@
 		</dict>
 	</dict>
 	<key>UIMainStoryboardFile</key>
-	<string>Home</string>
+	<string>YDMasterVC</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -104,6 +104,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
+	<true/>
 </dict>
 </plist>
