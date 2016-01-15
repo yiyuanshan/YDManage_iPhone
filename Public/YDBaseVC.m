@@ -19,6 +19,10 @@
     [super viewDidLoad];
 
 }
+- (UIViewController *)initWithVCName:(NSString *)vcName storyboardName:(NSString *)storyboardName
+{
+    return [[UIStoryboard  storyboardWithName:storyboardName bundle:nil] instantiateViewControllerWithIdentifier:vcName];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -9,5 +9,6 @@
 #import "YDBaseVC.h"
 
 @interface YDInfoBaseVC : YDBaseVC
+@property (strong, nonatomic) UINavigationController *navigationController;
 - (UIViewController *)initWithVCName:(NSString *)vcName;
 @end

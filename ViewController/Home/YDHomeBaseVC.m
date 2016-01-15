@@ -21,7 +21,7 @@
 }
 -(UIViewController *)initWithVCName:(NSString *)vcName
 {
-    return [[UIStoryboard  storyboardWithName:@"Home" bundle:nil] instantiateViewControllerWithIdentifier:vcName];
+    return [super initWithVCName:vcName storyboardName:@"Home"];
 }
 - (void)didReceiveMemoryWarning
 {

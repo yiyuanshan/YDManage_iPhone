@@ -20,7 +20,7 @@
 }
 -(UIViewController *)initWithVCName:(NSString *)vcName
 {
-    return [[UIStoryboard  storyboardWithName:@"Message" bundle:nil] instantiateViewControllerWithIdentifier:vcName];
+    return [super initWithVCName:vcName storyboardName:@"Message"];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

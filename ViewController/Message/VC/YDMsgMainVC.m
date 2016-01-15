@@ -13,6 +13,7 @@
 @end
 
 @implementation YDMsgMainVC
+@synthesize navigationController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

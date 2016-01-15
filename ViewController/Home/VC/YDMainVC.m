@@ -14,6 +14,8 @@
 
 @implementation YDMainVC
 
+@synthesize navigationController;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 

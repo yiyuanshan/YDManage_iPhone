@@ -7,7 +7,7 @@
 //
 
 #import "YDFindMainVC.h"
-#import "YDInfoBaseVC.h"
+#import "YDInfoMainVC.h"
 
 @interface YDFindMainVC ()
 
@@ -15,14 +15,18 @@
 
 @implementation YDFindMainVC
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+@synthesize navigationController;
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.title = @"发现";
 }
 -(IBAction)didPressedGoto:(id)sender
 {
 
-
+    YDInfoMainVC *vc = (YDInfoMainVC *)[self initWithVCName:@"YDInfoMainVC" storyboardName:@"Info"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

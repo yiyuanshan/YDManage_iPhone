@@ -21,7 +21,7 @@
 }
 -(UIViewController *)initWithVCName:(NSString *)vcName
 {
-    return [[UIStoryboard  storyboardWithName:@"Find" bundle:nil] instantiateViewControllerWithIdentifier:vcName];
+    return [super initWithVCName:vcName storyboardName:@"Find"];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

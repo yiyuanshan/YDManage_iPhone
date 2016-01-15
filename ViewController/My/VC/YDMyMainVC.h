@@ -9,5 +9,5 @@
 #import "YDMyBaseVC.h"
 
 @interface YDMyMainVC : YDMyBaseVC
-
+@property (strong, nonatomic) UINavigationController *navigationController;
 @end

@@ -9,5 +9,5 @@
 #import "YDMessageBaseVC.h"
 
 @interface YDMsgMainVC : YDMessageBaseVC
-
+@property (strong, nonatomic) UINavigationController *navigationController;
 @end

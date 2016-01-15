@@ -18,7 +18,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-
     return YES;
 }
 - (void)applicationWillResignActive:(UIApplication *)application {

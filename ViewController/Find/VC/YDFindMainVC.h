@@ -9,5 +9,5 @@
 #import "YDFindBaseVC.h"
 
 @interface YDFindMainVC : YDFindBaseVC
-
+@property (strong, nonatomic) UINavigationController *navigationController;
 @end

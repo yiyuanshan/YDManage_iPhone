@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface YDBaseVC : UIViewController
-
+- (UIViewController *)initWithVCName:(NSString *)vcName storyboardName:(NSString *)storyboardName;
 @end

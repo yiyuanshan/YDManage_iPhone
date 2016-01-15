@@ -12,6 +12,7 @@
 #import "YDInfoMainVC.h"
 #import "YDMsgMainVC.h"
 #import "YDMyMainVC.h"
+#import "UINavigationController+Additions.h"
 
 #define RGB(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 
@@ -49,6 +50,7 @@
 @property (strong, nonatomic) YDMsgMainVC *msgMainVC;
 @property (strong, nonatomic) YDMyMainVC *myMainVC;
 
+@property (nonatomic, strong) UIImageView *contentLineImageView;
 @end
 
 @implementation YDMasterVC
@@ -58,13 +60,42 @@
 @synthesize infoMainVC;
 @synthesize msgMainVC;
 @synthesize myMainVC;
-
+@synthesize contentLineImageView;
 @synthesize selectedIndex;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.contentLineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.extendedLayoutIncludesOpaqueBars = NO;
+    self.modalPresentationCapturesStatusBarAppearance = NO;
+    [self.navigationController drawNavigationController];
     [self showViewWithIndex:self.selectedIndex];
+}
+- (UIImageView *)findHairlineImageViewUnder:(UIView *)view
+{
+    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
+        return (UIImageView *)view;
+    }
+    for (UIView *subview in view.subviews) {
+        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
+        if (imageView) {
+            return imageView;
+        }
+    }
+    return nil;
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.contentLineImageView.hidden = YES;
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.contentLineImageView.hidden = NO;
 }
 -(IBAction)didPressedSelectItem:(UIButton *)sender
 {
@@ -79,6 +110,7 @@
     }
     switch (index) {
         case 1:{
+            self.title = @"首页";
             self.mainVC.view.hidden = NO;
             self.mainVC.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-49.0);
             [self.view addSubview:self.mainVC.view];
@@ -87,6 +119,7 @@
         }
             break;
         case 2:{
+            self.title = @"发现";
             self.findMainVC.view.hidden = NO;
             self.findMainVC.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-49.0);
             [self.view addSubview:self.findMainVC.view];
@@ -95,6 +128,7 @@
         }
             break;
         case 3:{
+            self.title = @"资讯";
             self.infoMainVC.view.hidden = NO;
             self.infoMainVC.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-49.0);
             [self.view addSubview:self.infoMainVC.view];
@@ -103,6 +137,7 @@
         }
             break;
         case 4:{
+            self.title = @"消息";
             self.msgMainVC.view.hidden = NO;
             self.msgMainVC.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-49.0);
             [self.view addSubview:self.msgMainVC.view];
@@ -111,6 +146,7 @@
         }
             break;
         case 5:{
+            self.title = @"我";
             self.myMainVC.view.hidden = NO;
             self.myMainVC.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-49.0);
             [self.view addSubview:self.myMainVC.view];
@@ -148,8 +184,8 @@
 -(YDMainVC *)mainVC
 {
     if (!mainVC) {
-        
         mainVC = [[UIStoryboard  storyboardWithName:@"Home" bundle:nil] instantiateViewControllerWithIdentifier:@"YDMainVC"];
+        mainVC.navigationController = self.navigationController;
     }
     return mainVC;
 }
@@ -157,6 +193,7 @@
 {
     if (!findMainVC) {
         findMainVC = [[UIStoryboard  storyboardWithName:@"Find" bundle:nil] instantiateViewControllerWithIdentifier:@"YDFindMainVC"];
+        findMainVC.navigationController = self.navigationController;
     }
     return findMainVC;
 }
@@ -164,6 +201,7 @@
 {
     if (!infoMainVC) {
         infoMainVC = [[UIStoryboard  storyboardWithName:@"Info" bundle:nil] instantiateViewControllerWithIdentifier:@"YDInfoMainVC"];
+        infoMainVC.navigationController = self.navigationController;
     }
     return infoMainVC;
 }
@@ -171,6 +209,7 @@
 {
     if (!msgMainVC) {
         msgMainVC = [[UIStoryboard  storyboardWithName:@"Message" bundle:nil] instantiateViewControllerWithIdentifier:@"YDMsgMainVC"];
+        msgMainVC.navigationController = self.navigationController;
     }
     return msgMainVC;
 }
@@ -178,6 +217,7 @@
 {
     if (!myMainVC) {
         myMainVC = [[UIStoryboard  storyboardWithName:@"My" bundle:nil] instantiateViewControllerWithIdentifier:@"YDMyMainVC"];
+        myMainVC.navigationController = self.navigationController;
     }
     return myMainVC;
 }
