@@ -163,7 +163,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, nullable) dispatch_group_t completionGroup;
 
-#warning 单以元 add
 ///---------------------------------------------
 /// @name Managing Request Operation Information
 ///---------------------------------------------
@@ -506,7 +505,6 @@ FOUNDATION_EXPORT NSString * const AFNetworkingTaskDidCompleteAssetPathKey;
  */
 FOUNDATION_EXPORT NSString * const AFNetworkingTaskDidCompleteErrorKey;
 
-#warning 单以元 add
 
 FOUNDATION_EXPORT NSString * const AFNetworkingTaskDidCompleteUserInfo;
 

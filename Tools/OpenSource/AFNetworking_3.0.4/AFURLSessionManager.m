@@ -80,7 +80,6 @@ NSString * const AFNetworkingTaskDidCompleteResponseSerializerKey = @"com.alamof
 NSString * const AFNetworkingTaskDidCompleteResponseDataKey = @"com.alamofire.networking.complete.finish.responsedata";
 NSString * const AFNetworkingTaskDidCompleteErrorKey = @"com.alamofire.networking.task.complete.error";
 NSString * const AFNetworkingTaskDidCompleteAssetPathKey = @"com.alamofire.networking.task.complete.assetpath";
-#warning 单以元 add
 NSString * const AFNetworkingTaskUserInfoKey =
     @"com.alamofire.networking.task.complete.userInfo";
 
@@ -270,7 +269,7 @@ didCompleteWithError:(NSError *)error
         //We no longer need the reference, so nil it out to gain back some memory.
         self.mutableData = nil;
     }
-#warning 单以元 add
+
     userInfo[AFNetworkingTaskUserInfoKey] = manager.userInfo;
     
     if (self.downloadFileURL) {
